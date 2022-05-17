@@ -14,12 +14,27 @@ fn main() {
     b1.w = 5;
     b1.b = 10;
     println!("{:?}", b1);
-    println!("Cube: {}", b1.cube())
+    println!("Cube: {}", b1.cube());
+
+    let b2 = Cube::cube(&mut b1);
+    dbg!(&b2);
+
+    let mut b3 = Cube::navu(3, 4, 3);
+    dbg!(&b3);
+    println!("{}", b3.cube())
 }
 
 impl Cube {
+
+    fn navu(h: u32, w:u32, b: u32) -> Cube{
+        Cube{
+            w,
+            b,
+            h
+        }
+    }
+
     fn cube(&mut self) -> u32{
-        self.h = 5;
         dbg!(&self);
         self.b * self.h * self.w
     }
