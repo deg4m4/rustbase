@@ -1,3 +1,5 @@
+use std::io;
+
 fn main() {
 
     let mut w: Vec<i32> = Vec::new();
@@ -8,6 +10,12 @@ fn main() {
     w.push(123);
     w.push(123);
     w.push(12);
+
+    let mut uInput = String::new();
+
+    io::stdin().read_line(&mut uInput).unwrap();
+
+    w.push(uInput.trim().parse().unwrap());
 
     let p: i32 = 33;
 
@@ -26,6 +34,12 @@ fn main() {
     }
 
     for e in &v {
+        println!("{}", e)
+    }
+
+    println!("--------------------");
+
+    for e in &w {
         println!("{}", e)
     }
 
