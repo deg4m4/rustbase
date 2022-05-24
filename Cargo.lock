@@ -3,5 +3,12 @@
 version = 3
 
 [[package]]
+name = "mystr"
+version = "0.1.0"
+
+[[package]]
 name = "rustbase"
 version = "0.1.0"
+dependencies = [
+ "mystr",
+]
